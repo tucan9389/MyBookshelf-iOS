@@ -6,13 +6,13 @@
 //  Copyright © 2019 Doyoung Gwak. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "NewViewController.h"
 
-@interface ViewController ()
+@interface NewViewController ()
 
 @end
 
-@implementation ViewController
+@implementation NewViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
