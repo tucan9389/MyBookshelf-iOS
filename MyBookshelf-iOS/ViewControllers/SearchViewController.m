@@ -7,8 +7,11 @@
 //
 
 #import "SearchViewController.h"
+#import "BooksViewController.h"
 
-@interface SearchViewController ()
+@interface SearchViewController () <UISearchBarDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *topSearchBar;
 
 @end
 
@@ -16,17 +19,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.topSearchBar.delegate = self;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+    NSLog(@"%@", searchBar.text);
+    [self performSegueWithIdentifier:@"gotoBooks" sender:searchBar.text];
 }
-*/
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)query {
+    if ([segue.identifier isEqualToString:@"gotoBooks"]) {
+        BooksViewController *vc = (BooksViewController *)segue.destinationViewController;
+        vc.query = query;
+    }
+}
 
 @end

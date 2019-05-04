@@ -10,12 +10,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BookModel : NSObject
+@protocol BookModelProtocol <NSObject, NSCoding, NSSecureCoding>
+
+-(NSString *)title;
+-(NSString *)subtitle;
+-(NSString *)imageURL;
+-(NSString *)isbn13;
+-(NSString *)price;
+-(NSString *)url;
+
+@end
+
+@interface BookModel : NSObject<BookModelProtocol>
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *subtitle;
 @property (nonatomic, strong) NSString *imageURL;
-@property (nonatomic, strong) NSNumber *isbn13;
+@property (nonatomic, strong) NSString *isbn13;
 @property (nonatomic, strong) NSString *price;
 @property (nonatomic, strong) NSString *url;
 

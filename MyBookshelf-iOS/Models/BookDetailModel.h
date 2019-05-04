@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BookModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BookDetailModel : NSObject
+@interface BookDetailModel : NSObject<NSCoding, NSSecureCoding, BookModelProtocol>
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *subtitle;

@@ -24,4 +24,29 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:self.title forKey:@"title"];
+    [encoder encodeObject:self.subtitle forKey:@"subtitle"];
+    [encoder encodeObject:self.imageURL forKey:@"imageURL"];
+    [encoder encodeObject:self.isbn13 forKey:@"isbn13"];
+    [encoder encodeObject:self.price forKey:@"price"];
+    [encoder encodeObject:self.url forKey:@"url"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if(self = [super init]) {
+        self.title = [decoder decodeObjectOfClass:[NSString class] forKey:@"title"];
+        self.subtitle = [decoder decodeObjectOfClass:[NSString class] forKey:@"subtitle"];
+        self.imageURL = [decoder decodeObjectOfClass:[NSString class] forKey:@"imageURL"];
+        self.isbn13 = [decoder decodeObjectOfClass:[NSString class] forKey:@"isbn13"];
+        self.price = [decoder decodeObjectOfClass:[NSString class] forKey:@"price"];
+        self.url = [decoder decodeObjectOfClass:[NSString class] forKey:@"url"];
+    }
+    return self;
+}
+
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 @end

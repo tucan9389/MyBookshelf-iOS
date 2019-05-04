@@ -7,8 +7,14 @@
 //
 
 #import "BookmarkViewController.h"
+#import "BookTableView.h"
+#import "BookmarkManager.h"
+#import "DetailBookViewController.h"
+#import "BookDetailModel.h"
 
-@interface BookmarkViewController ()
+@interface BookmarkViewController () <DetailBookDelegate>
+
+@property (weak, nonatomic) IBOutlet BookTableView *mainTableView;
 
 @end
 
@@ -16,17 +22,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.mainTableView.detailBookDelegate = self;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self reloadBookmarkedBooks];
 }
-*/
+
+-(void)reloadBookmarkedBooks {
+    self.mainTableView.books = [[BookmarkManager shared] bookmarks];
+    
+    [self.mainTableView reloadData];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"gotoDetailBook"]) {
+        BookModel *book = sender;
+        DetailBookViewController *vc = (DetailBookViewController *)segue.destinationViewController;
+        vc.book = book;
+    }
+}
+
+-(void)segueWithBook:(id<BookModelProtocol>)book {
+    [self performSegueWithIdentifier:@"gotoDetailBook" sender:book];
+}
 
 @end

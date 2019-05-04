@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@protocol DetailBookDelegate;
 
+@interface BooksViewController : UIViewController
+
+@property (nonatomic, strong) NSString *query;
 
 @end
 

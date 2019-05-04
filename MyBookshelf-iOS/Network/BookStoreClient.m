@@ -6,17 +6,20 @@
 //  Copyright © 2019 Doyoung Gwak. All rights reserved.
 //
 
-#import "BookStoreAPIClient.h"
+#import "BookStoreClient.h"
+
+#import "BookModel.h"
+#import "BookDetailModel.h"
 
 NSString *const Scheme = @"https";
 NSString *const BaseURL = @"api.itbook.store";
 
-@implementation BookStoreAPIClient
+@implementation BookStoreClient
 
-static BookStoreAPIClient *_sharedInstance = nil;
+static BookStoreClient *_sharedInstance = nil;
 
-+(BookStoreAPIClient *)shared {
-    @synchronized([BookStoreAPIClient class]) {
++(BookStoreClient *)shared {
+    @synchronized([BookStoreClient class]) {
         if (!_sharedInstance)
             _sharedInstance = [[self alloc] init];
         return _sharedInstance;
@@ -48,20 +51,20 @@ static BookStoreAPIClient *_sharedInstance = nil;
     [downloadTask resume];
 }
 
--(void)requestNewWithCompletion: (void (^)(NSArray *))completion {
+-(void)requestNewAPIWithCompletion: (void (^)(NSArray *))completion {
     NSString *path = @"/1.0/new";
     
     [self requestWithPath:path params:@{} completion:^(id result) {
         if (result) {
-            id bookInfos = result[@"books"];
-            completion(bookInfos);
+            NSArray *books = [self convertToBookModelWithJSON: result[@"books"]];
+            completion(books);
         } else {
-            completion(nil);
+            completion(@[]);
         }
     }];
 }
 
--(void)requestSearchWithQuery: (NSString *)query page: (NSNumber *)page completion: (void (^)(NSArray *))completion {
+-(void)requestSearchAPIWithQuery: (NSString *)query page: (NSNumber *)page completion: (void (^)(NSArray *))completion {
     NSString *path = @"/1.0/search";
     if (query) {
         path = [NSString stringWithFormat:@"%@/%@", path, query];
@@ -72,15 +75,15 @@ static BookStoreAPIClient *_sharedInstance = nil;
     
     [self requestWithPath:path params:@{} completion:^(id result) {
         if (result) {
-            id bookInfos = result[@"books"];
-            completion(bookInfos);
+            NSArray *books = [self convertToBookModelWithJSON: result[@"books"]];
+            completion(books);
         } else {
-            completion(nil);
+            completion(@[]);
         }
     }];
 }
 
--(void)requestDetailBookWithQuery: (NSNumber *)isbn13 completion: (void (^)(BookDetailModel *))completion {
+-(void)requestDetailBookAPIWithQuery: (NSNumber *)isbn13 completion: (void (^)(BookDetailModel *))completion {
     NSString *path = @"/1.0/books";
     if (isbn13) {
         path = [NSString stringWithFormat:@"%@/%@", path, isbn13];
@@ -88,11 +91,26 @@ static BookStoreAPIClient *_sharedInstance = nil;
     
     [self requestWithPath:path params:@{} completion:^(id result) {
         if (result) {
-            completion(result);
+            BookDetailModel *bookDetail = [[BookDetailModel alloc] initWithInfo: result];
+            completion(bookDetail);
         } else {
             completion(nil);
         }
     }];
+}
+
+-(NSArray *)convertToBookModelWithJSON: (NSArray *)bookInfos {
+    if (bookInfos) {
+        NSMutableArray *books = [[NSMutableArray alloc] init];
+        for (int i=0; i<bookInfos.count; i++) {
+            NSDictionary *bookInfo = bookInfos[i];
+            BookModel *book = [[BookModel alloc] initWithInfo: bookInfo];
+            [books addObject:book];
+        }
+        return books;
+    } else {
+        return @[];
+    }
 }
 
 @end

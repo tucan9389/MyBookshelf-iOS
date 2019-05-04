@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BookModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class BookDetailModel;
 @interface DetailBookViewController : UIViewController
 
-@property (nonatomic, strong) NSString *isbn13;
+@property (nonatomic, strong) BookModel *book;
+@property (nonatomic, strong) BookDetailModel *bookDetail;
 
 @end
 

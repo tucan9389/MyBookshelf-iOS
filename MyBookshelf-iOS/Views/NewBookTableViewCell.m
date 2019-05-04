@@ -22,10 +22,12 @@
     // Configure the view for the selected state
 }
 
-- (void)setBook: (BookModel *)book {
+- (void)setBook: (id<BookModelProtocol>)book {
     self.titleLabel.text = book.title;
     self.subtitleLabel.text = book.subtitle;
+    self.isbn13Label.text = [NSString stringWithFormat:@"%@", book.isbn13];
     self.priceLabel.text = book.price;
+    self.urlLabel.text = book.url;
     // self.image = book.image
 }
 
