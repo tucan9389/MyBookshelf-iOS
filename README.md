@@ -1,6 +1,8 @@
 # MyBookshelf-iOS
 The assignment is to see code design, code accuracy, data structure, algorithms, and learning abilities, as well as the ability to implement your app.
 
+![mybookshelf-demo001](resources/mybookshelf-demo001.gif)
+
 ## TODO
 ### Common
 - ~~Network layer(`BookStoreClient`) for requesting Book API~~
