@@ -8,6 +8,7 @@
 
 #import "DetailBookViewController.h"
 #import <SafariServices/SafariServices.h>
+#import "UIImageView+Cache.h"
 #import "BookStoreClient.h"
 #import "BookmarkManager.h"
 #import "HistoryManager.h"
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) UIBarButtonItem *bookmarkItem;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *isbn13Label;
 @property (weak, nonatomic) IBOutlet UILabel *pagesLabel;
@@ -76,7 +78,7 @@
     }
 }
 
--(void)reloadDetailBookAPIWithISBN13: (NSNumber *)isbn13 {
+-(void)reloadDetailBookAPIWithISBN13: (NSString *)isbn13 {
     // start of network
     [[BookStoreClient shared] requestDetailBookAPIWithQuery:isbn13 completion:^(BookDetailModel * _Nonnull result) {
         self.bookDetail = result;
@@ -125,6 +127,11 @@
     self.languageLabel.text = self.bookDetail.language;
     self.isbn10Label.text = self.bookDetail.isbn10;
     self.ratingLabel.text = self.bookDetail.rating;
+    
+    NSURL *url = [NSURL URLWithString:self.bookDetail.imageURL];
+    if (url) {
+        [self.mainImageView loadImageWithURL:url];
+    }
 }
 
 - (IBAction)tapLink:(id)sender {

@@ -43,7 +43,7 @@
     
     NSIndexPath *indexPathForSelectedRow = self.mainTableView.indexPathForSelectedRow;
     if (indexPathForSelectedRow) {
-        [self.mainTableView deselectRowAtIndexPath:indexPathForSelectedRow animated:true];
+        [self.mainTableView deselectRowAtIndexPath:indexPathForSelectedRow animated:YES];
     }
 }
 
@@ -89,12 +89,12 @@
 
 -(void)updateUIForStartRequest {
     [self.refreshItem setTitle:@"Loading..."];
-    [self.refreshItem setEnabled:false];
+    [self.refreshItem setEnabled:NO];
 }
 
 -(void)updateUIForEndRequest {
     self.refreshItem.title = @"Refresh";
-    [self.refreshItem setEnabled:true];
+    [self.refreshItem setEnabled:YES];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

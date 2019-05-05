@@ -377,6 +377,7 @@
                         <outlet property="isbn13Label" destination="Af4-ID-ukU" id="uj8-Is-4dX"/>
                         <outlet property="languageLabel" destination="kk5-wI-wr5" id="uJW-Qw-dCJ"/>
                         <outlet property="linkButton" destination="KM5-6r-tLo" id="QLn-7a-HOq"/>
+                        <outlet property="mainImageView" destination="2DJ-Xv-3Zn" id="uYa-ei-0CV"/>
                         <outlet property="pagesLabel" destination="6Gm-lK-alv" id="OJT-ne-ZFf"/>
                         <outlet property="priceLabel" destination="oUJ-cT-iOA" id="mwU-gE-jgZ"/>
                         <outlet property="publisherLabel" destination="Eop-a0-VBk" id="w0u-3S-qry"/>

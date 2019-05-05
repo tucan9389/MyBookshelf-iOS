@@ -4,7 +4,7 @@ The assignment is to see code design, code accuracy, data structure, algorithms,
 ## TODO
 ### Common
 - ~~Network layer(`BookStoreClient`) for requesting Book API~~
-- Image loader (and cacher)
+- ~~Image loader (and cacher)~~
 - ~~Bookmark manager (`NSUserDefaults`)~~
 - ~~History manager (`NSUserDefaults`)~~
 
@@ -20,6 +20,7 @@ The assignment is to see code design, code accuracy, data structure, algorithms,
 ### Search Scene
 - ~~Request `Search API`~~
 - ~~Show the book list from the result of `Search API`~~
+- Auto load the next page
 
 ### Bookmark Scene
 - ~~Show the book list from bookmark manager~~

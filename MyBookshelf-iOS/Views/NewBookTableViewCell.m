@@ -8,6 +8,7 @@
 
 #import "NewBookTableViewCell.h"
 #import "BookModel.h"
+#import "UIImageView+Cache.h"
 
 @implementation NewBookTableViewCell
 
@@ -29,6 +30,10 @@
     self.priceLabel.text = book.price;
     self.urlLabel.text = book.url;
     // self.image = book.image
+    NSURL *imageURL = [NSURL URLWithString:book.imageURL];
+    if (imageURL) {
+        [self.leftImageView loadImageWithURL:imageURL];
+    }
 }
 
 @end

@@ -36,6 +36,8 @@
 		71A6CC96227D0CCE00285357 /* BookmarkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A6CC95227D0CCE00285357 /* BookmarkManager.m */; };
 		71A6CC99227D91A100285357 /* BookDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A6CC98227D91A100285357 /* BookDBManager.m */; };
 		71A6CC9C227D94EF00285357 /* HistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A6CC9B227D94EF00285357 /* HistoryManager.m */; };
+		71A6CCA3227F20BA00285357 /* DYImageCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A6CCA2227F20BA00285357 /* DYImageCacheManager.m */; };
+		71A6CCA9227F25AB00285357 /* UIImageView+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A6CCA8227F25AB00285357 /* UIImageView+Cache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,10 @@
 		71A6CC98227D91A100285357 /* BookDBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDBManager.m; sourceTree = "<group>"; };
 		71A6CC9A227D94EF00285357 /* HistoryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryManager.h; sourceTree = "<group>"; };
 		71A6CC9B227D94EF00285357 /* HistoryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryManager.m; sourceTree = "<group>"; };
+		71A6CCA1227F20BA00285357 /* DYImageCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYImageCacheManager.h; sourceTree = "<group>"; };
+		71A6CCA2227F20BA00285357 /* DYImageCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYImageCacheManager.m; sourceTree = "<group>"; };
+		71A6CCA7227F25AB00285357 /* UIImageView+Cache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Cache.h"; sourceTree = "<group>"; };
+		71A6CCA8227F25AB00285357 /* UIImageView+Cache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Cache.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,11 +196,15 @@
 			children = (
 				71851DAB226D452100113A9F /* AppDelegate.h */,
 				71851DAC226D452100113A9F /* AppDelegate.m */,
-				71A6CC9D227D958A00285357 /* DB */,
-				7165F76722731B980010F164 /* Network */,
+				71A6CCA7227F25AB00285357 /* UIImageView+Cache.h */,
+				71A6CCA8227F25AB00285357 /* UIImageView+Cache.m */,
+				71A6CCA1227F20BA00285357 /* DYImageCacheManager.h */,
+				71A6CCA2227F20BA00285357 /* DYImageCacheManager.m */,
 				7165F76322731ACB0010F164 /* Views */,
 				7165F762227315EE0010F164 /* Models */,
 				71851E25226F340100113A9F /* ViewControllers */,
+				71A6CC9D227D958A00285357 /* DB */,
+				7165F76722731B980010F164 /* Network */,
 				711803ED2275B41C007398DB /* Utils */,
 				71851DB1226D452100113A9F /* Main.storyboard */,
 				71851DB4226D452300113A9F /* Assets.xcassets */,
@@ -391,11 +401,13 @@
 				71851DBB226D452300113A9F /* main.m in Sources */,
 				71851E18226F338D00113A9F /* SearchViewController.m in Sources */,
 				7165F755226FEEC80010F164 /* NewBookTableViewCell.m in Sources */,
+				71A6CCA9227F25AB00285357 /* UIImageView+Cache.m in Sources */,
 				71A6CC9C227D94EF00285357 /* HistoryManager.m in Sources */,
 				711803EC2275B417007398DB /* AutoLoadControl.m in Sources */,
 				71A6CC96227D0CCE00285357 /* BookmarkManager.m in Sources */,
 				7165F76A22731E770010F164 /* BookDetailModel.m in Sources */,
 				71851DAD226D452100113A9F /* AppDelegate.m in Sources */,
+				71A6CCA3227F20BA00285357 /* DYImageCacheManager.m in Sources */,
 				71A6CC99227D91A100285357 /* BookDBManager.m in Sources */,
 				71851E22226F339F00113A9F /* HistoryViewController.m in Sources */,
 				7165F76D22732CA60010F164 /* DetailBookViewController.m in Sources */,

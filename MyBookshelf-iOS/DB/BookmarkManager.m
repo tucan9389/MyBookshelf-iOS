@@ -31,8 +31,7 @@ static BookmarkManager *_sharedInstance = nil;
     return nil;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.dbManager = [[BookDBManager alloc] initWithKey:bookmarkKey];

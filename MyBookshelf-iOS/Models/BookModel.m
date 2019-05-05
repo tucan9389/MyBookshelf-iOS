@@ -16,7 +16,7 @@
         NSLog(@"_init: %@", self);
         if (info[@"title"]) self.title = info[@"title"];
         if (info[@"subtitle"]) self.subtitle = info[@"subtitle"];
-        if (info[@"imageURL"]) self.imageURL = info[@"imageURL"];
+        if (info[@"image"]) self.imageURL = info[@"image"];
         if (info[@"isbn13"]) self.isbn13 = info[@"isbn13"];
         if (info[@"price"]) self.price = info[@"price"];
         if (info[@"url"]) self.url = info[@"url"];

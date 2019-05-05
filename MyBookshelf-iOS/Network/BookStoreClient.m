@@ -83,7 +83,7 @@ static BookStoreClient *_sharedInstance = nil;
     }];
 }
 
--(void)requestDetailBookAPIWithQuery: (NSNumber *)isbn13 completion: (void (^)(BookDetailModel *))completion {
+-(void)requestDetailBookAPIWithQuery: (NSString *)isbn13 completion: (void (^)(BookDetailModel *))completion {
     NSString *path = @"/1.0/books";
     if (isbn13) {
         path = [NSString stringWithFormat:@"%@/%@", path, isbn13];

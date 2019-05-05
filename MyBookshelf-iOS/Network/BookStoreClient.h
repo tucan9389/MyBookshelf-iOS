@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)requestNewAPIWithCompletion: (void (^)(NSArray *))completion;
 -(void)requestSearchAPIWithQuery: (NSString *)query page: (NSNumber *)page completion: (void (^)(NSArray *))completion;
--(void)requestDetailBookAPIWithQuery: (NSNumber *)isbn13 completion: (void (^)(BookDetailModel *))completion;
+-(void)requestDetailBookAPIWithQuery: (NSString *)isbn13 completion: (void (^)(BookDetailModel *))completion;
 
 @end
 
