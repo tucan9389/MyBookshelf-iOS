@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		711803EC2275B417007398DB /* AutoLoadControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 711803EB2275B417007398DB /* AutoLoadControl.m */; };
 		7165F755226FEEC80010F164 /* NewBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7165F754226FEEC80010F164 /* NewBookTableViewCell.m */; };
 		7165F756226FEEC80010F164 /* NewBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7165F754226FEEC80010F164 /* NewBookTableViewCell.m */; };
 		7165F757226FEEC80010F164 /* NewBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7165F754226FEEC80010F164 /* NewBookTableViewCell.m */; };
@@ -58,8 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		711803EA2275B417007398DB /* AutoLoadControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoLoadControl.h; sourceTree = "<group>"; };
-		711803EB2275B417007398DB /* AutoLoadControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoLoadControl.m; sourceTree = "<group>"; };
 		7165F753226FEEC80010F164 /* NewBookTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewBookTableViewCell.h; sourceTree = "<group>"; };
 		7165F754226FEEC80010F164 /* NewBookTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewBookTableViewCell.m; sourceTree = "<group>"; };
 		7165F75F2272F1990010F164 /* BookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
@@ -131,15 +128,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		711803ED2275B41C007398DB /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				711803EA2275B417007398DB /* AutoLoadControl.h */,
-				711803EB2275B417007398DB /* AutoLoadControl.m */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		7165F762227315EE0010F164 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,16 +184,12 @@
 			children = (
 				71851DAB226D452100113A9F /* AppDelegate.h */,
 				71851DAC226D452100113A9F /* AppDelegate.m */,
-				71A6CCA7227F25AB00285357 /* UIImageView+Cache.h */,
-				71A6CCA8227F25AB00285357 /* UIImageView+Cache.m */,
-				71A6CCA1227F20BA00285357 /* DYImageCacheManager.h */,
-				71A6CCA2227F20BA00285357 /* DYImageCacheManager.m */,
 				7165F76322731ACB0010F164 /* Views */,
 				7165F762227315EE0010F164 /* Models */,
 				71851E25226F340100113A9F /* ViewControllers */,
 				71A6CC9D227D958A00285357 /* DB */,
 				7165F76722731B980010F164 /* Network */,
-				711803ED2275B41C007398DB /* Utils */,
+				71A6CCAA227F29F400285357 /* ImageCache */,
 				71851DB1226D452100113A9F /* Main.storyboard */,
 				71851DB4226D452300113A9F /* Assets.xcassets */,
 				71851DB6226D452300113A9F /* LaunchScreen.storyboard */,
@@ -261,6 +245,17 @@
 				71A6CC9B227D94EF00285357 /* HistoryManager.m */,
 			);
 			path = DB;
+			sourceTree = "<group>";
+		};
+		71A6CCAA227F29F400285357 /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				71A6CCA7227F25AB00285357 /* UIImageView+Cache.h */,
+				71A6CCA8227F25AB00285357 /* UIImageView+Cache.m */,
+				71A6CCA1227F20BA00285357 /* DYImageCacheManager.h */,
+				71A6CCA2227F20BA00285357 /* DYImageCacheManager.m */,
+			);
+			name = ImageCache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,7 +398,6 @@
 				7165F755226FEEC80010F164 /* NewBookTableViewCell.m in Sources */,
 				71A6CCA9227F25AB00285357 /* UIImageView+Cache.m in Sources */,
 				71A6CC9C227D94EF00285357 /* HistoryManager.m in Sources */,
-				711803EC2275B417007398DB /* AutoLoadControl.m in Sources */,
 				71A6CC96227D0CCE00285357 /* BookmarkManager.m in Sources */,
 				7165F76A22731E770010F164 /* BookDetailModel.m in Sources */,
 				71851DAD226D452100113A9F /* AppDelegate.m in Sources */,

@@ -16,13 +16,10 @@
 
 #import "BookStoreClient.h"
 
-#import "AutoLoadControl.h"
-
 @interface BooksViewController () <DetailBookDelegate>
 
 @property (weak, nonatomic) IBOutlet BookTableView *mainTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshItem;
-@property (nonatomic, strong) AutoLoadControl *autoLoadControl;
 
 @end
 
@@ -32,8 +29,6 @@
     [super viewDidLoad];
     
     self.mainTableView.detailBookDelegate = self;
-    
-    self.autoLoadControl = [[AutoLoadControl alloc] init];
     
     [self refresh:nil];
 }
