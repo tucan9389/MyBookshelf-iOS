@@ -3,6 +3,10 @@ The assignment is to see code design, code accuracy, data structure, algorithms,
 
 ![mybookshelf-demo001](resources/mybookshelf-demo001.gif)
 
+## Components
+
+![diagram](resources/diagram.png)
+
 ## TODO
 ### Common
 - ~~Network layer(`BookStoreClient`) for requesting Book API~~
